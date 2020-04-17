@@ -19,7 +19,7 @@ public class LoginScreen {
 	private AndroidDriver appdriver = null;
 
 	public LoginScreen() throws MalformedURLException {
-		this.appdriver = mobileAppDriver.inicializarDriver();
+//		this.appdriver = mobileAppDriver.inicializarDriver();
 	}
 	
 	public void iniciarSesion(String user, String pass) {
