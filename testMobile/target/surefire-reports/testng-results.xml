@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="1" total="5" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="48460" started-at="2020-04-17T17:33:00Z" finished-at="2020-04-17T17:33:48Z">
+    <groups>
+    </groups>
+    <test name="TestMobileAppium" duration-ms="48460" started-at="2020-04-17T17:33:00Z" finished-at="2020-04-17T17:33:48Z">
+      <class name="testinguy.appium.main.mainTest2">
+        <test-method status="PASS" signature="inicioClase()[pri:0, instance:testinguy.appium.main.mainTest2@5a61f5df]" name="inicioClase" is-config="true" duration-ms="23959" started-at="2020-04-17T17:33:00Z" finished-at="2020-04-17T17:33:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inicioClase -->
+        <test-method status="PASS" signature="IniciarSesion(java.lang.String, java.lang.String)[pri:0, instance:testinguy.appium.main.mainTest2@5a61f5df]" name="IniciarSesion" duration-ms="5400" started-at="2020-04-17T17:33:24Z" description="Login" finished-at="2020-04-17T17:33:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- IniciarSesion -->
+        <test-method status="PASS" signature="Test_Slider()[pri:0, instance:testinguy.appium.main.mainTest2@5a61f5df]" name="Test_Slider" duration-ms="10299" started-at="2020-04-17T17:33:29Z" description="Ejercicio de presionar y soltar" finished-at="2020-04-17T17:33:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_Slider -->
+        <test-method status="PASS" signature="Test_DragAndDrop()[pri:0, instance:testinguy.appium.main.mainTest2@5a61f5df]" name="Test_DragAndDrop" duration-ms="8776" started-at="2020-04-17T17:33:39Z" description="Ejercicio de presionar, arrastrar y soltar" finished-at="2020-04-17T17:33:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_DragAndDrop -->
+        <test-method status="PASS" signature="testCaseSkipException()[pri:0, instance:testinguy.appium.main.mainTest2@5a61f5df]" name="testCaseSkipException" duration-ms="0" started-at="2020-04-17T17:33:48Z" depends-on-methods="testinguy.appium.main.mainTest2.Test_DragAndDrop" finished-at="2020-04-17T17:33:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCaseSkipException -->
+      </class> <!-- testinguy.appium.main.mainTest2 -->
+    </test> <!-- TestMobileAppium -->
+  </suite> <!-- Suite -->
+</testng-results>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="testinguy.appium.main.mainTest2">
+        <methods>
+          <include name="IniciarSesion"/>
+          <include name="Test_Slider"/>
+          <include name="Test_DragAndDrop"/>
+          <include name="inicioClase"/>
+          <include name="testCaseSkipException"/>
+        </methods>
+      </class> <!-- testinguy.appium.main.mainTest2 -->
+      <class name="testinguy.appium.main.mainTest">
+        <methods>
+          <include name="inicioClase"/>
+          <include name="Test_DragAndDrop"/>
+          <include name="IniciarSesion"/>
+        </methods>
+      </class> <!-- testinguy.appium.main.mainTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
