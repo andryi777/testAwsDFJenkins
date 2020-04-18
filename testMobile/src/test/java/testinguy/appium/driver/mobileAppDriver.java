@@ -9,48 +9,36 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
 
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
 public class mobileAppDriver {
 
-	AppiumDriver<MobileElement> driver;
-	
-	@BeforeSuite
-	public void inicializarDriver() throws MalformedURLException {
-//		AndroidDriver<AndroidElement> driver = null;
+	public final static AndroidDriver<?> inicializarDriver() throws MalformedURLException {
+		AndroidDriver<AndroidElement> driver = null;
 
 		File appDir = new File("apk");
 		File app = new File(appDir, "VodQA.apk"); //app-release.apk
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
-//		capabilities.setCapability("deviceName", "Samsung Galaxy S9");
-		//capabilities.setCapability("deviceName", "Emu_S9");
-//		capabilities.setCapability("platformName", "Android");
-//		capabilities.setCapability("noReset", true);
-//		capabilities.setCapability("fullReset", false);
-//		capabilities.setCapability("automationName", "UiAutomator2");
+		capabilities.setCapability("deviceName", "Samsung Galaxy S9");
+		capabilities.setCapability("deviceName", "Emu_S9");
+		capabilities.setCapability("platformName", "Android");
+		capabilities.setCapability("noReset", true);
+		capabilities.setCapability("fullReset", false);
+		capabilities.setCapability("automationName", "UiAutomator2");
 
 		// capabilities.setCapability("unicodeKeyboard", "true");
 		// capabilities.setCapability("resetKeyboard", "true");
 
-//		capabilities.setCapability("app", app.getAbsolutePath());
-//		driver = new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+		capabilities.setCapability("app", app.getAbsolutePath());
+		driver = new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-//		return driver;
+		return driver;
 	}
 
-	@AfterSuite
-	public void tearDownAppium() {
-		driver.quit();
-	}
-	
 	public static void waitForPageLoaded(WebDriver driver) {
 		try {
 			Thread.sleep(1000);
