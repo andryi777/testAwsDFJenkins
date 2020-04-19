@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
@@ -23,6 +25,10 @@ public class SliderScreen {
 	}
 	
 	public void realizar_Slide() {
+		
+		WebDriverWait wait = new WebDriverWait(this.appdriver, 60);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(slider));
+		
 		int var_X = this.appdriver.findElement(slider).getLocation().getX();
 		int var_Y = this.appdriver.findElement(slider).getLocation().getY();
 		int var_Ancho = this.appdriver.findElement(slider).getSize().width;
@@ -35,6 +41,8 @@ public class SliderScreen {
 	}
 	
 	public void regresar() {
+		WebDriverWait wait = new WebDriverWait(this.appdriver, 60);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(btnBack));
 		this.appdriver.findElement(btnBack).click();
 	}
 	

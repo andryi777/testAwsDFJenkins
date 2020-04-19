@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
@@ -21,6 +23,9 @@ public class NativeViewScreen {
 	}
 	
 	public void listarElementos() {
+		WebDriverWait wait = new WebDriverWait(this.appdriver, 60);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(vgHelloWorld));
+		
 		List<MobileElement> listTxts = this.appdriver.findElements(vgHelloWorld.xpath("//android.widget.TextView[@content-desc=\"textView\"]"));
 						
 		for(int i=0 ; i< listTxts.size(); i++) {
@@ -30,6 +35,8 @@ public class NativeViewScreen {
 	}
 	
 	public void regresar() {
+		WebDriverWait wait = new WebDriverWait(this.appdriver, 60);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(btnBack));
 		this.appdriver.findElement(btnBack).click();
 	}
 	

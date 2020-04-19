@@ -4,6 +4,8 @@ import java.net.MalformedURLException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
@@ -18,11 +20,15 @@ public class LoginScreen {
 	
 	private AndroidDriver appdriver = null;
 
-	public LoginScreen() throws MalformedURLException {
+	public LoginScreen() throws Exception {
 		this.appdriver = mobileAppDriver.inicializarDriver();
 	}
 	
 	public void iniciarSesion(String user, String pass) {
+	
+		WebDriverWait wait = new WebDriverWait(this.appdriver, 60);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(btnLogIn));
+        
 		this.appdriver.findElement(txtUser).clear();
 		this.appdriver.findElement(txtUser).sendKeys(user);
 		

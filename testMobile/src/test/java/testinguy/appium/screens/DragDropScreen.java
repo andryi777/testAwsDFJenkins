@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import io.appium.java_client.MobileBy;
@@ -26,6 +28,8 @@ public class DragDropScreen {
 	}
 	
 	public String dragBoton() {
+		WebDriverWait wait = new WebDriverWait(this.appdriver, 60);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(btn_DragMe));
 		
 		MobileElement txtDropHere= (MobileElement) this.appdriver.findElement(rec_dropZone.xpath("//*[@text=\""+"Drop here."+"\"]"));
 			

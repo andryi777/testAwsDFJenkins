@@ -35,7 +35,8 @@ public class mainTest2 {
 	@Parameters({"user", "pass"})
 	@Test  (description="Login")
 	public void IniciarSesion(String usuario, String password) throws Exception {
-		try {			
+		try {	
+			Thread.sleep(2000);
 			oLoginScreen.iniciarSesion(usuario, password);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -46,6 +47,7 @@ public class mainTest2 {
 	@Test  (description="Acceder a una ventana y leer elementos", enabled = false)
 	public void Test_NativeView() throws Exception {
 		try {			
+			Thread.sleep(2000);
 			oSampleListScreen.seleccionarNativeView();
 			Thread.sleep(2000);
 			oNativeViewScreen.listarElementos();
@@ -59,6 +61,7 @@ public class mainTest2 {
 	@Test (description="Ejercicio de presionar y soltar")
 	public void Test_Slider() throws Exception {
 		try {			
+			Thread.sleep(2000);
 			oSampleListScreen.seleccionarSlider();
 			Thread.sleep(2000);
 			oSliderScreen.realizar_Slide();
@@ -72,6 +75,7 @@ public class mainTest2 {
 	@Test (description="Ejercicio de presionar, arrastrar y soltar")
 	public void Test_DragAndDrop() throws Exception {
 		try {			
+			Thread.sleep(2000);
 			oSampleListScreen.seleccionarDragDrop();
 			Thread.sleep(2000);
 			

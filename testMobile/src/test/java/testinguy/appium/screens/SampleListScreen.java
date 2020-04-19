@@ -2,6 +2,8 @@ package testinguy.appium.screens;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
@@ -25,12 +27,16 @@ public class SampleListScreen {
 		this.appdriver = appDriver;
 	}
 	
-	public void seleccionarNativeView() {
+	public void seleccionarNativeView() {	
+		WebDriverWait wait = new WebDriverWait(this.appdriver, 60);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(opcSlider));
 		this.appdriver.findElement(opcNativeView).click();
 
 	}
 	
 	public void seleccionarSlider() {
+		
+		
 		this.appdriver.findElement(opcSlider).click();
 
 	}
