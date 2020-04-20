@@ -84,6 +84,7 @@ public class mainTest2 {
 			String valorEsperado = "Circle dropped"; //droppedxD
 
 			Assert.assertEquals(valorActual, valorEsperado);
+			Thread.sleep(2000);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 //			Assert.fail();
