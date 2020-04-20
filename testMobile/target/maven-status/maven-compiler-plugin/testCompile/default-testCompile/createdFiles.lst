@@ -3,6 +3,7 @@ testinguy\appium\screens\DragDropScreen.class
 testinguy\appium\main\mainTest2.class
 testinguy\appium\screens\SampleListScreen.class
 testinguy\appium\screens\LoginScreen.class
+testinguy\appium\apk\test.class
 testinguy\appium\screens\SliderScreen.class
 testinguy\appium\driver\PropertyLoader.class
 testinguy\appium\driver\mobileAppDriver.class

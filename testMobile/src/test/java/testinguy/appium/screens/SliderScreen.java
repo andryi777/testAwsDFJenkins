@@ -24,10 +24,16 @@ public class SliderScreen {
 		this.appdriver = appDriver;
 	}
 	
-	public void realizar_Slide() {
+	public void realizar_Slide() throws InterruptedException {
 		
-		WebDriverWait wait = new WebDriverWait(this.appdriver, 60);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(slider));
+//		WebDriverWait wait = new WebDriverWait(this.appdriver, 60);
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(slider));
+        
+        while(this.appdriver.findElement(slider).isDisplayed()==false) {
+        	Thread.sleep(1000);
+        	System.out.println("no ven al slider");
+		}
+        System.out.println("sí ven al slider");
 		
 		int var_X = this.appdriver.findElement(slider).getLocation().getX();
 		int var_Y = this.appdriver.findElement(slider).getLocation().getY();

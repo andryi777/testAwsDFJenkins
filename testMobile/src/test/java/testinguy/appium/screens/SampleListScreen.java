@@ -21,63 +21,91 @@ public class SampleListScreen {
 	private By opcCarousel = MobileBy.xpath("//android.widget.TextView[@content-desc=\"carousel\"]");
 	private By opcWheelPicker = MobileBy.xpath("//android.widget.TextView[@content-desc=\"wheelPicker\"]");
 	
-	private AndroidDriver appdriver = null;
+	private AndroidDriver newappdriver = null;
 
 	public SampleListScreen(AndroidDriver appDriver) {
-		this.appdriver = appDriver;
+		this.newappdriver = appDriver;
 	}
 	
-	public void seleccionarNativeView() {	
-		WebDriverWait wait = new WebDriverWait(this.appdriver, 60);
+	public void seleccionarNativeView() throws InterruptedException {	
+		Thread.sleep(1000);
+		
+		WebDriverWait wait = new WebDriverWait(this.newappdriver, 60);
         wait.until(ExpectedConditions.visibilityOfElementLocated(opcSlider));
-		this.appdriver.findElement(opcNativeView).click();
+        try {
+        	this.newappdriver.findElement(opcNativeView).click();	
+        }catch(Exception ex) {
+        	System.out.println(ex.getMessage());
+        }	
 
 	}
 	
-	public void seleccionarSlider() {
+	public void seleccionarSlider() throws InterruptedException {
+		Thread.sleep(1000);
 		
-		
-		this.appdriver.findElement(opcSlider).click();
-
+		WebDriverWait wait = new WebDriverWait(this.newappdriver, 60);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(opcSlider));
+        
+        this.newappdriver.findElement(opcSlider).click();	
+//		while(this.appdriver.findElement(opcSlider).isDisplayed()) {
+//			try {
+//				this.appdriver.findElement(opcSlider).click();	
+//				Thread.sleep(1000);
+//			}catch (Exception ex) {
+//				System.out.println(ex.getMessage());
+//			}
+//		}
 	}
 	
 	public void seleccionarVerticalSwiping() {
-		this.appdriver.findElement(opcVerticalSwiping).click();
+		this.newappdriver.findElement(opcVerticalSwiping).click();
 
 	}
 	
-	public void seleccionarDragDrop() {
-		this.appdriver.findElement(opcDragDrop).click();
-
+	public void seleccionarDragDrop() throws InterruptedException {
+		Thread.sleep(1000);
+		
+		WebDriverWait wait = new WebDriverWait(this.newappdriver, 60);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(opcDragDrop));
+        
+        this.newappdriver.findElement(opcDragDrop).click();
+//		while(newappdriver.appdriver.findElement(opcDragDrop).isDisplayed()) {
+//			try {
+//				this.appdriver.findElement(opcDragDrop).click();
+//				Thread.sleep(1000);
+//			}catch (Exception ex) {
+//				System.out.println(ex.getMessage());
+//			}
+//		}
 	}
 	
 	public void seleccionarDoubleTap() {
-		this.appdriver.findElement(opcDoubleTap).click();
+		this.newappdriver.findElement(opcDoubleTap).click();
 
 	}
 	
 	public void seleccionarLongPress() {
-		this.appdriver.findElement(opcLongPress).click();
+		this.newappdriver.findElement(opcLongPress).click();
 
 	}
 	
 	public void seleccionarPhotoView() {
-		this.appdriver.findElement(opcPhotoView).click();
+		this.newappdriver.findElement(opcPhotoView).click();
 
 	}
 	
 	public void seleccionarWebView() {
-		this.appdriver.findElement(opcWebView).click();
+		this.newappdriver.findElement(opcWebView).click();
 
 	}
 	
 	public void seleccionarCarousel() {
-		this.appdriver.findElement(opcCarousel).click();
+		this.newappdriver.findElement(opcCarousel).click();
 
 	}
 	
 	public void seleccionarWheelPicker() {
-		this.appdriver.findElement(opcWheelPicker).click();
+		this.newappdriver.findElement(opcWheelPicker).click();
 
 	}
 	

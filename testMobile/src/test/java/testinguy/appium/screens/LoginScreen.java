@@ -18,27 +18,29 @@ public class LoginScreen {
 	private By txtPassword = MobileBy.xpath("//android.widget.EditText[@content-desc=\"password\"]");
 	private By btnLogIn = MobileBy.xpath("//android.view.ViewGroup[@content-desc=\"login\"]/android.widget.Button/android.widget.TextView");
 	
-	private AndroidDriver appdriver = null;
+	private AndroidDriver newappdriver = null;
 
 	public LoginScreen() throws Exception {
-		this.appdriver = mobileAppDriver.inicializarDriver();
+		this.newappdriver = mobileAppDriver.inicializarDriver();
 	}
 	
 	public void iniciarSesion(String user, String pass) {
 	
-		WebDriverWait wait = new WebDriverWait(this.appdriver, 60);
+		WebDriverWait wait = new WebDriverWait(this.newappdriver, 60);
         wait.until(ExpectedConditions.visibilityOfElementLocated(btnLogIn));
         
-		this.appdriver.findElement(txtUser).clear();
-		this.appdriver.findElement(txtUser).sendKeys(user);
+		this.newappdriver.findElement(txtUser).clear();
+		this.newappdriver.findElement(txtUser).sendKeys(user);
 		
-		this.appdriver.findElement(txtPassword).clear();
-		this.appdriver.findElement(txtPassword).sendKeys(user);
+		this.newappdriver.findElement(txtPassword).clear();
+		this.newappdriver.findElement(txtPassword).sendKeys(user);
 		
-		this.appdriver.findElement(btnLogIn).click();
+		if(this.newappdriver.isKeyboardShown()) { this.newappdriver.hideKeyboard(); }
+		
+		this.newappdriver.findElement(btnLogIn).click();
 	}
 	
 	public AndroidDriver getMobileDriver() {
-		return appdriver;
+		return newappdriver;
 	}
 }

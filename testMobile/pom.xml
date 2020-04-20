@@ -24,7 +24,7 @@
 				<version>2.20.1</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>.\src\test\resources\testng2.xml</suiteXmlFile>
+						<suiteXmlFile>.\src\test\resources\testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
@@ -107,20 +107,21 @@
 		<dependency>
 			<groupId>io.appium</groupId>
 			<artifactId>java-client</artifactId>
-			<version>6.1.0</version>
+			<version>7.3.0</version> <!-- 6.1.0 -->
 		</dependency>
 
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>6.14.3</version>
+			<version>7.1.0</version>
 		</dependency>
 
-
+		<!-- 
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.17</version>
 		</dependency>
+		 -->
 	</dependencies>
 </project>
